@@ -15,12 +15,16 @@
  */
 package com.example.android.miwok;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +32,44 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+        context = this;
+        TextView numbers = (TextView) findViewById(R.id.numbers);
+        TextView colors = (TextView) findViewById(R.id.colors);
+        TextView family = (TextView) findViewById(R.id.family);
+        TextView phrases = (TextView) findViewById(R.id.phrases);
+
+        numbers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent numbersList = new Intent(context, Numbers.class);
+                startActivity(numbersList);
+            }
+        });
+
+        colors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent colorssList = new Intent(context, ColorsActivity.class);
+                startActivity(colorssList);
+            }
+        });
+
+        family.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent familyList = new Intent(context, FamilyActivity.class);
+                startActivity(familyList);
+            }
+        });
+
+        phrases.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent phrasesList = new Intent(context, PhrasesActivity.class);
+                startActivity(phrasesList);
+            }
+        });
     }
 
-    public void openNumbersList(View v){
-        Intent numbers = new Intent(this, Numbers.class);
-        startActivity(numbers);
-    }
+
 }
