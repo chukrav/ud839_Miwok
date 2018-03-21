@@ -3,7 +3,9 @@ package com.example.android.miwok;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -32,16 +34,16 @@ public class Numbers extends AppCompatActivity {
 //        Log.v("NumbersActivity", "The word[0] is: " + words.get(0));
 //        Log.v("NumbersActivity", "The word[5] is: " + words.get(5));
 
-        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
+//        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
 //        TextView word = new TextView(this);
 //        word.setText(words.get(0));
 //        rootView.addView(word);
 
+//        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
+        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, R.layout.list_item, words);
+        ListView listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter(itemsAdapter);
 
-        for (int i = 0; i < words.size(); i++) {
-            TextView word = new TextView(this);
-            word.setText(words.get(i));
-            rootView.addView(word);
-        }
+
     }
 }
