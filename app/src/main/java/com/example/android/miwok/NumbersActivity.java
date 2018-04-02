@@ -47,6 +47,7 @@ public class NumbersActivity extends AppCompatActivity {
        WordAdapter itemsAdapter = new WordAdapter(this, words);
 
         ListView listView = (ListView) findViewById(R.id.list);
+//        listView.setBackgroundColor(getResources().getColor(R.color.category_numbers));
         listView.setAdapter(itemsAdapter);
 
     }
