@@ -43,7 +43,7 @@ public class ColorsActivity extends AppCompatActivity {
         // Find the root view so we can add child views to it
 //        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
 //        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,words);
-        WordAdapter itemsAdapter = new WordAdapter(this, words);
+        WordAdapter itemsAdapter = new WordAdapter(this, words, R.color.category_colors);
 
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
